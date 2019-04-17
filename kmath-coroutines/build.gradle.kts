@@ -2,8 +2,6 @@ plugins {
     kotlin("multiplatform")
 }
 
-val coroutinesVersion: String by rootProject.extra
-
 kotlin {
     jvm()
     js()
@@ -12,7 +10,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":kmath-core"))
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${Ver.coroutinesVersion}")
             }
         }
         val commonTest by getting {
@@ -23,7 +21,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Ver.coroutinesVersion}")
             }
         }
         val jvmTest by getting {
@@ -34,7 +32,7 @@ kotlin {
         }
         val jsMain by getting {
             dependencies {
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${Ver.coroutinesVersion}")
             }
         }
         val jsTest by getting {

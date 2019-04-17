@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    id("kotlinx-atomicfu") version "0.12.1"
+    id("kotlinx-atomicfu")
 }
 
 val atomicfuVersion: String by rootProject.extra
@@ -14,7 +14,7 @@ kotlin {
             dependencies {
                 api(project(":kmath-core"))
                 api(project(":kmath-coroutines"))
-                compileOnly("org.jetbrains.kotlinx:atomicfu-common:$atomicfuVersion")
+                compileOnly("org.jetbrains.kotlinx:atomicfu-common:${Ver.atomicfuVersion}")
             }
         }
         val commonTest by getting {
@@ -25,7 +25,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                compileOnly("org.jetbrains.kotlinx:atomicfu:$atomicfuVersion")
+                compileOnly("org.jetbrains.kotlinx:atomicfu:${Ver.atomicfuVersion}")
             }
         }
         val jvmTest by getting {
